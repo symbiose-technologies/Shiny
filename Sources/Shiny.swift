@@ -13,7 +13,7 @@ import SceneKit
 open class ShinyView: UIView {
     
     open lazy var sceneView: SceneView = {
-        let sceneView = SceneView(frame: self.bounds.insetBy(dx: -500, dy: -500))
+        let sceneView = SceneView(frame: self.bounds)
 //        self.addSubview(sceneView) // testing
         self.insertSubview(sceneView, at: 0)
         return sceneView
