@@ -13,9 +13,7 @@ import SceneKit
 open class ShinyView: UIView {
     
     open lazy var sceneView: SceneView = {
-        let sceneView = SceneView(frame: self.bounds)
-//        self.addSubview(sceneView) // testing
-        self.insertSubview(sceneView, at: 0)
+        let sceneView = SceneView()
         return sceneView
     }()
     
@@ -55,6 +53,13 @@ open class ShinyView: UIView {
             }
 //            self.sceneView.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360° Support
         }
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        sceneView.frame = self.bounds
+        self.insertSubview(sceneView, at: 0)
     }
     
     /**
