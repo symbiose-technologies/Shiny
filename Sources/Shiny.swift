@@ -14,6 +14,7 @@ open class ShinyView: UIView {
     
     open lazy var sceneView: SceneView = {
         let sceneView = SceneView()
+        self.insertSubview(sceneView, at: 0)
         return sceneView
     }()
     
@@ -59,7 +60,6 @@ open class ShinyView: UIView {
         super.layoutSubviews()
         
         sceneView.frame = self.bounds
-        self.insertSubview(sceneView, at: 0)
     }
     
     /**
